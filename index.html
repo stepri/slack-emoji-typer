@@ -3,6 +3,7 @@
     onkeyup="renderAlphabet()"
     cols="30"
     rows="5"
+    autofocus
     onblur="removeText()"
 ></textarea>
 <div id="copy"></div>
@@ -12,8 +13,6 @@
     const outputElm = document.getElementById('output');
     const textElm = document.getElementById('text');
     const copyElm = document.getElementById('copy');
-
-    textElm.focus();
 
     function removeText() {
         copyElm.innerHTML =
