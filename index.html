@@ -1,0 +1,56 @@
+<textarea id="text" onkeyup="renderAlphabet()" cols="25" rows="5" autofocus="" onblur="removeText()"></textarea>
+
+<div id="output"></div>
+
+<script>
+    function removeText() {
+        document.getElementById("text").value = '';
+        document.getElementById("output").value = '';
+    }
+    function renderAlphabet() {
+        var text = document.getElementById("text").value;
+        if (!text || text === '') {
+            return
+        }
+        text = text.split('');
+        text = text.map(t => {
+            if (t === '1') {
+                return ':one:';
+            } else if (t === '2') {
+                return ':two:';
+            } else if (t === '3') {
+                return ':three:';
+            } else if (t === '4') {
+                return ':four:';
+            } else if (t === '5') {
+                return ':five:';
+            } else if (t === '6') {
+                return ':five:';
+            } else if (t === '7') {
+                return ':five:';
+            } else if (t === '8') {
+                return ':five:';
+            } else if (t === '9') {
+                return ':nine:';
+            } else if (t === '0') {
+                return ':zero:';
+            } else if (t === ' ') {
+                return '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+            } else if (t === '!') {
+                return `:exclamation:`
+            } else if (t === '?') {
+                return `:question_mark:`
+            } else {
+                return `:alphabet-yellow-${t.toLowerCase()}:`
+            }
+        });
+
+        text = text.join('');
+
+        document.getElementById("output").innerHTML = text
+
+        text = text.replace('&nbsp;', ' ', `/g`);
+
+        navigator.clipboard.writeText(text);
+    }
+</script>
