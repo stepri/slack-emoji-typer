@@ -1,4 +1,4 @@
-<textarea id="text" onkeyup="renderAlphabet()" cols="25" rows="5" autofocus="" onblur="removeText()"></textarea>
+<textarea id="text" onkeyup="renderAlphabet()" cols="30" rows="5" autofocus="" onblur="removeText()"></textarea>
 
 <div id="output"></div>
 
@@ -49,8 +49,6 @@
 
         document.getElementById("output").innerHTML = text
 
-        text = text.replace('&nbsp;', ' ', `/g`);
-
-        navigator.clipboard.writeText(text);
+        navigator.clipboard.writeText(text.replaceAll('&nbsp;', ' ', `/g`));
     }
 </script>
