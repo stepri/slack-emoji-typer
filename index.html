@@ -69,7 +69,9 @@
             const joinedText = text.join('');
             outputElm.innerHTML = joinedText;
 
-            navigator.clipboard.writeText(joinedText.replaceAll('&nbsp;', ' ', `/g`));
+            navigator.clipboard.writeText(
+                joinedText.replaceAll('&nbsp;', ' ', `/g`)
+            );
         }
     }
 </script>
